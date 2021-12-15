@@ -1,0 +1,21 @@
+{
+  "sugar_data": [
+    {
+      "id": "",
+      "sugar_level": "",
+      "sugar_taken_month": "",
+      "sugar_taken_date": "",
+      "sugar_taken_time": ""
+    }
+  ],
+  "oxygen_data": [
+    {
+      "id": "",
+      "oxygen_level": "",
+      "oxygen_taken_month": "",
+      "oxygen_taken_date": "",
+      "oxygen_taken_time": "",
+      "bpm_value": ""
+    }
+  ]
+}

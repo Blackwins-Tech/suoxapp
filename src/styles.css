@@ -1,0 +1,19 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.btn {
+  margin: 20px;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+button > a {
+  color: white;
+}
+
+.menuItem {
+  color: blue;
+}
