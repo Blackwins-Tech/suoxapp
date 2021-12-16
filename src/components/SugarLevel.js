@@ -1,4 +1,5 @@
 import "../styles.css";
+import * as React from "react";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
@@ -9,17 +10,38 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import Paper from "@mui/material/Paper";
+// added after deployment
+import { Divider } from '@mui/material'; 
+//import Alert from '@mui/material/Alert';
+import Stack from '@mui/material/Stack';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
+// added after deployment ends here
 import { useState } from "react";
 import uniqueid from "uniqueid";
 import axios from "axios";
+
+const Alert = React.forwardRef(function Alert(props, ref) {
+   return <MuiAlert elevation={1} ref={ref} variant="filled" {...props} />;
+ });
 export default function SugarLevel() {
   const [value, setValue] = useState(null);
   const [session, setSession] = useState("");
   const [sugarLevel, setSugarLevel] = useState("");
+  const [open, setOpen] = React.useState(false);
+
 
   const handleChange = (event) => {
     setSession(event.target.value);
+      };
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setOpen(false);
   };
+
 
   const postData = (sugarObject) => {
     axios
@@ -59,12 +81,13 @@ export default function SugarLevel() {
     console.log(sugarObject);
 
     postData(sugarObject);
+    setOpen(true);
   };
 
   return (
-    <div component={Paper}>
+    <div className="App">
       <h3>Patient Sugar Entry Form</h3>
-
+      <Divider/>
       <LocalizationProvider dateAdapter={AdapterDateFns}>
         <DatePicker
           label="Test Date"
@@ -104,11 +127,22 @@ export default function SugarLevel() {
           </Select>
         </FormControl>
       </div>
-      <div>
+      <Stack spacing={2} sx={{ width: '100%' }}>
+      <Button variant="contained" onClick={onSave}>
+        Save
+      </Button>
+      <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+          Sugar Data Saved Successfully !
+        </Alert>
+      </Snackbar>
+      {/* <Alert severity="success">This is a success message!</Alert> */}
+    </Stack>
+      {/* <div>
         <Button variant="contained" color="primary" onClick={onSave}>
           Save
         </Button>
-      </div>
+      </div> */}
     </div>
   );
 }
