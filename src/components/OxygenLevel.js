@@ -44,12 +44,12 @@ export default function OxygenLevel() {
   const postOxygenData = (oxygenObj) => {
     axios
       .post("https://3x2wq-3000.sse.codesandbox.io/oxygen_data", {
-        id: uniqueid(),
+        //id: uniqueid(),
         oxygen_level: oxygenObj.oxygen_level,
-        oxygen_taken_month: oxygenObj.oxygen_taken_month,
-        oxygen_taken_date: oxygenObj.oxygen_taken_date,
-        oxygen_taken_time: oxygenObj.oxygen_taken_time,
-        bpm_value: oxygenObj.bpm_value
+        month: oxygenObj.oxygen_taken_month,
+        date: oxygenObj.oxygen_taken_date,
+        time: oxygenObj.oxygen_taken_time,
+        bpm: oxygenObj.bpm_value,
       })
       .then((resp) => {
         console.log(resp.data);
