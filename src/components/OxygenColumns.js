@@ -1,27 +1,27 @@
 export const COLUMNS = [
   {
     Header: "Id",
-    accessor: "id"
+    accessor: "patient_id",
   },
 
   {
     Header: "Oxygen_Level",
-    accessor: "oxygen_level"
+    accessor: "oxygen_value",
   },
   {
     Header: "Month",
-    accessor: "oxygen_taken_month"
+    accessor: "month",
   },
   {
     Header: "date",
-    accessor: "oxygen_taken_date"
+    accessor: "date",
   },
   {
     Header: "BPM",
-    accessor: "bpm_value"
+    accessor: "bpm",
   },
   {
     Header: "Time",
-    accessor: "oxygen_taken_time"
-  }
+    accessor: "time",
+  },
 ];
