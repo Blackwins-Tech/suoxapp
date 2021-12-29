@@ -1,23 +1,23 @@
 export const COLUMNS = [
   {
     Header: "Id",
-    accessor: "id"
+    accessor: "patient_id",
   },
 
   {
     Header: "Sugar Level",
-    accessor: "sugar_level"
+    accessor: "sugar_value",
   },
   {
     Header: "Month",
-    accessor: "sugar_taken_month"
+    accessor: "month",
   },
   {
     Header: "date",
-    accessor: "sugar_taken_date"
+    accessor: "date",
   },
   {
     Header: "Time",
-    accessor: "sugar_taken_time"
-  }
+    accessor: "time",
+  },
 ];
