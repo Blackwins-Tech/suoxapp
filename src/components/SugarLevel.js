@@ -46,11 +46,11 @@ export default function SugarLevel() {
   const postData = (sugarObject) => {
     axios
       .post("https://suoxappbackend.herokuapp.com/api/sugar", {
-        id: uniqueid(),
-        sugar_level: sugarObject.sugar_level,
-        sugar_taken_month: sugarObject.sugar_taken_month,
-        sugar_taken_date: sugarObject.sugar_taken_date,
-        sugar_taken_time: sugarObject.sugar_taken_time
+        //id: uniqueid(),
+        sugar_value: sugarObject.sugar_level,
+        month: sugarObject.sugar_taken_month,
+        date: sugarObject.sugar_taken_date,
+        time: sugarObject.sugar_taken_time,
       })
       .then((resp) => {
         console.log(resp.data);
