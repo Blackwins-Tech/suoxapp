@@ -42,10 +42,10 @@ export default function SugarLevel() {
     setOpen(false);
   };
 
-
+// https://3x2wq-3000.sse.codesandbox.io/sugar_data
   const postData = (sugarObject) => {
     axios
-      .post("https://3x2wq-3000.sse.codesandbox.io/sugar_data", {
+      .post("https://suoxappbackend.herokuapp.com/api/sugar", {
         id: uniqueid(),
         sugar_level: sugarObject.sugar_level,
         sugar_taken_month: sugarObject.sugar_taken_month,
