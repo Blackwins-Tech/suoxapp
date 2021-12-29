@@ -43,7 +43,7 @@ export default function OxygenLevel() {
 
   const postOxygenData = (oxygenObj) => {
     axios
-      .post("https://3x2wq-3000.sse.codesandbox.io/oxygen_data", {
+      .post("https://suoxappbackend.herokuapp.com/api/oxygen", {
         //id: uniqueid(),
         oxygen_level: oxygenObj.oxygen_level,
         month: oxygenObj.oxygen_taken_month,
