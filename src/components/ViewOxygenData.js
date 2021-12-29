@@ -12,7 +12,7 @@ import axios from "axios";
 import { COLUMNS } from "./OxygenColumns";
 
 //const baseURL = "https://3x2wq-3000.sse.codesandbox.io/sugar_data";
-const baseURL = "https://3x2wq-3000.sse.codesandbox.io/oxygen_data";
+const baseURL = "https://suoxappbackend.herokuapp.com/api/oxygen";
 const ViewOxygenData = () => {
   const [dataSource, SetDataSource] = useState([]);
 
