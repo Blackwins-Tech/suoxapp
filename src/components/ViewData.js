@@ -11,7 +11,7 @@ import Paper from "@mui/material/Paper";
 import axios from "axios";
 import { COLUMNS } from "./columns";
 
-const baseURL = "https://3x2wq-3000.sse.codesandbox.io/sugar_data";
+const baseURL = "https://suoxappbackend.herokuapp.com/api/sugar";
 //const baseURL = "https://3x2wq-3000.sse.codesandbox.io/oxygen_data";
 const ViewData = () => {
   const [dataSource, SetDataSource] = useState([]);
